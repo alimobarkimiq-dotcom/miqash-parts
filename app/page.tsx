@@ -192,7 +192,7 @@ export default function Home() {
               <a href={waLink(`السلام عليكم، أريد التأكد من مناسبة هذا المنتج لجهازي: ${product.name}`)}
                 className="flex items-center justify-center gap-2 rounded-xl border border-[#ede8df] py-4 text-[15px] font-bold text-[#1a1a1a] transition hover:border-[#A8894A]">
                 <WaIcon />
-                غير متأكد من الموديل؟ تواصل معنا
+                خدمة العملاء
               </a>
             </div>
 
