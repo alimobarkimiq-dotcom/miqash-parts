@@ -306,18 +306,40 @@ export default function Home() {
       </section>
 
       {/* ── FOOTER ── */}
-      <footer className="border-t border-[#ede8df]">
-        <div className="mx-auto flex max-w-[1200px] flex-wrap items-center justify-between gap-4 px-8 py-5">
-          <div className="flex items-center gap-2.5">
-            <img src={store.logo} alt={store.name} className="h-9 w-9 rounded-full object-cover" />
-            <span className="text-[14px] font-black">{store.name}</span>
+      <footer className="border-t border-[#ede8df] bg-white">
+        <div className="mx-auto max-w-[1200px] px-8 py-8">
+
+          {/* الصف الأول: الشعار + روابط التواصل */}
+          <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-[#ede8df]">
+            <div className="flex items-center gap-2.5">
+              <img src={store.logo} alt={store.name} className="h-9 w-9 rounded-full object-cover" />
+              <div>
+                <div className="text-[15px] font-black text-[#1a1a1a]">{store.name}</div>
+                <div className="text-[11px] text-[#999]">قطع غيار أصلية معتمدة</div>
+              </div>
+            </div>
+            <div className="flex gap-5 text-[13px] font-semibold text-[#888]">
+              <a href="https://miqash.shop/ar/brands/229855681" className="hover:text-[#A8894A] transition">باناسونيك</a>
+              <a href={store.instagram} className="hover:text-[#A8894A] transition">إنستغرام</a>
+              <a href={store.x} className="hover:text-[#A8894A] transition">X</a>
+              <a href={waLink("السلام عليكم")} className="hover:text-[#A8894A] transition">واتساب</a>
+            </div>
           </div>
-          <div className="flex gap-5 text-[13px] font-semibold text-[#888]">
-            <a href="https://miqash.shop/ar/brands/229855681" className="hover:text-[#1a1a1a]">باناسونيك</a>
-            <a href={store.instagram} className="hover:text-[#1a1a1a]">إنستغرام</a>
-            <a href={store.x} className="hover:text-[#1a1a1a]">X</a>
-            <a href={waLink("السلا عليكم")} className="hover:text-[#1a1a1a]">واتساب</a>
+
+          {/* الصف الثاني: روابط قانونية + توثيق */}
+          <div className="flex flex-wrap items-center justify-between gap-4 pt-5">
+            <div className="flex gap-5 text-[12px] font-semibold text-[#aaa]">
+              <a href="https://miqash.shop/ar/p/ddgGe" className="hover:text-[#1a1a1a] transition">سياسة الاستبدال والاسترجاع</a>
+            </div>
+            <a
+              href="https://miqash.shop/ar/redirect/pages/1278257063"
+              className="flex items-center gap-2 text-[12px] font-semibold text-[#aaa] hover:text-[#1a1a1a] transition"
+            >
+              <img src="https://cdn.salla.network/images/sbc.png?v=2.0.5" alt="المركز السعودي للأعمال" className="h-6 w-6 object-contain" />
+              توثيق المركز السعودي للأعمال
+            </a>
           </div>
+
         </div>
       </footer>
 
