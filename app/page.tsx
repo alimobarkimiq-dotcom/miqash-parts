@@ -316,7 +316,7 @@ export default function Home() {
             <a href="https://miqash.shop/ar/brands/229855681" className="hover:text-[#1a1a1a]">باناسونيك</a>
             <a href={store.instagram} className="hover:text-[#1a1a1a]">إنستغرام</a>
             <a href={store.x} className="hover:text-[#1a1a1a]">X</a>
-            <a href={waLink("السلام عليكم")} className="hover:text-[#1a1a1a]">واتساب</a>
+            <a href={waLink("السلا عليكم")} className="hover:text-[#1a1a1a]">واتساب</a>
           </div>
         </div>
       </footer>
