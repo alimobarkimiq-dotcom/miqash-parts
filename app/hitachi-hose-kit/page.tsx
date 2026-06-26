@@ -93,61 +93,6 @@ export default function MiqashLandingPage() {
       className="min-h-screen"
     >
 
-      {/* ─── Structured Data (JSON-LD) ─── */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Product",
-            "name": "طقم لي مكنسة هيتاشي كامل",
-            "description": "طقم قطع غيار مكنسة هيتاشي يشمل اللي والفرشة وزوج العصا، متوافق مع أكثر من 14 موديل هيتاشي.",
-            "image": [
-              "https://cdn.salla.sa/Wzrln/q9rGmL84SZG1QMPUnHYbegzAzZRIXOTnHmg4N2EU.jpg",
-              "https://cdn.salla.sa/Wzrln/RTvpSsMJxeWh51vEzAIJIp6B1ZGs9eBxwneZJVjk.png",
-              "https://cdn.salla.sa/Wzrln/VMgxFzoF4U0Ln2zpoZdvqycETThpS33CT2h5FWmg.jpg"
-            ],
-            "brand": { "@type": "Brand", "name": "Hitachi" },
-            "seller": { "@type": "Organization", "name": "مِقَشّة", "url": "https://miqash.shop/ar" },
-            "offers": {
-              "@type": "Offer",
-              "url": "https://miqash.shop/ar/QEGbBx",
-              "priceCurrency": "SAR",
-              "availability": "https://schema.org/InStock",
-              "seller": { "@type": "Organization", "name": "مِقَشّة" }
-            },
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "4.9",
-              "reviewCount": "18",
-              "bestRating": "5"
-            },
-            "review": [
-              {
-                "@type": "Review",
-                "author": { "@type": "Person", "name": "خالد" },
-                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-                "datePublished": "2026-06-15",
-                "reviewBody": "ممتاز جدا وأنصح فيه"
-              },
-              {
-                "@type": "Review",
-                "author": { "@type": "Person", "name": "ناذر الخليل" },
-                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-                "datePublished": "2024-06-30",
-                "reviewBody": "كما طلبته .. رائع"
-              },
-              {
-                "@type": "Review",
-                "author": { "@type": "Person", "name": "أمل بنت محمد" },
-                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-                "datePublished": "2023-01-30",
-                "reviewBody": "للأمانة طلبت من عندكم لي مكنسة هيتاشي كامل، منجد أتكلم لكم عن الجودة — مرا ممتازة"
-              }
-            ]
-          })
-        }}
-      />
 
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap');
