@@ -40,6 +40,14 @@ function productSchema(seo: LandingPageSEO): object {
       price: seo.price,
       availability: `https://schema.org/${seo.availability}`,
       seller: ORG_SCHEMA,
+      ...(seo.merchantReturnPolicy && {
+        hasMerchantReturnPolicy: {
+          "@type": "MerchantReturnPolicy",
+          returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
+          applicableCountry: "SA",
+          returnPolicyUrl: seo.merchantReturnPolicy,
+        },
+      }),
     },
   };
 

@@ -42,8 +42,9 @@ export const hitachiSeo: LandingPageSEO = {
   ],
 
   currency: "SAR",
-  price: "TODO: أضف السعر الحقيقي للمنتج هنا",  // ← عدّل هذا
+  price: "60",
   availability: "InStock",
+  merchantReturnPolicy: "https://miqash.shop/ar/p/ddgGe",
 
   // ─── بيانات حقيقية من المتجر ───
   aggregateRating: {

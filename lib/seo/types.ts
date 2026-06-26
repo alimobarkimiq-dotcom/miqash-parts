@@ -36,8 +36,9 @@ export interface LandingPageSEO {
 
   // ─── Pricing & Availability ───
   currency: string;
-  price: string;                   // مطلوب — يجب أن يكون حقيقياً
+  price: string;
   availability: "InStock" | "OutOfStock" | "PreOrder";
+  merchantReturnPolicy?: string; // رابط سياسة الاسترجاع
 
   // ─── Ratings (اختيارية — أضفها فقط إذا كانت البيانات حقيقية) ───
   aggregateRating?: {

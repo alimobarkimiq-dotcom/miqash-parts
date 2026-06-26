@@ -317,6 +317,12 @@ export default function MiqashLandingPage() {
               </div>
             </div>
 
+            {/* السعر */}
+            <div style={{ display: "flex", alignItems: "baseline", gap: 6 }}>
+              <span style={{ fontSize: 28, fontWeight: 900, color: "#3D2F1A" }}>60</span>
+              <span style={{ fontSize: 15, fontWeight: 700, color: "#3D2F1A" }}>ريال</span>
+            </div>
+
             <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
               {["توصيل سريع", "جودة عالية", "دعم ما بعد البيع"].map((b) => (
                 <span key={b} style={{ backgroundColor: "#F7F3EB", border: "1px solid #EDE8DF", borderRadius: 3, padding: "4px 10px", fontSize: 12, fontWeight: 600 }}>✓ {b}</span>
