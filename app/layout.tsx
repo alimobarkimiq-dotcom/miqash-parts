@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Tajawal } from "next/font/google";
+import Clarity from "@/components/analytics/Clarity";
 import "./globals.css";
 
 const tajawal = Tajawal({
@@ -46,7 +47,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ar" dir="rtl">
-      <body className={tajawal.className}>{children}</body>
+      <body className={tajawal.className}>
+        {children}
+        <Clarity />
+      </body>
     </html>
   );
 }
