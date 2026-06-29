@@ -1,22 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import { STORE } from "@/lib/store/constants";
+import { HITACHI_HOSE_KIT_PRODUCT as product, whatsappLink } from "@/lib/store/products";
 
-const compatibleModels = [
-  "CV-975F", "CV-970Y", "CV-960F", "CV-950F",
-  "CV-945F", "CV-940Y", "CV-930F", "CV-100",
-  "CV-980TJ", "CV-995HC", "CV-985HC", "CV-9800YJ",
-  "CV-995DC", "SS220 BG",
-];
+const compatibleModels = product.compatibleModels;
 
-const productImages = [
-  "https://cdn.salla.sa/Wzrln/q9rGmL84SZG1QMPUnHYbegzAzZRIXOTnHmg4N2EU.jpg",
-  "https://cdn.salla.sa/Wzrln/RTvpSsMJxeWh51vEzAIJIp6B1ZGs9eBxwneZJVjk.png",
-  "https://cdn.salla.sa/Wzrln/VMgxFzoF4U0Ln2zpoZdvqycETThpS33CT2h5FWmg.jpg",
-  "https://cdn.salla.sa/Wzrln/9ca520f6-4b45-4be2-848d-d01a470c182e-1000x1000-lbzEw45QzwKc4hXZay2dpHzlSCAVchUWuRShPk6A.jpg",
-];
+const productImages = product.images.map((image) => image.url);
 
-const WA_LINK = "https://wa.me/966554670717?text=مرحبا،%20أريد%20الاستفسار%20عن%20طقم%20لي%20مكنسة%20هيتاشي";
+const WA_LINK = whatsappLink("مرحبا، أريد الاستفسار عن طقم لي مكنسة هيتاشي");
 
 const reviews = [
   {
@@ -92,7 +84,6 @@ export default function MiqashLandingPage() {
       style={{ backgroundColor: "#F7F3EB", color: "#3D2F1A", fontFamily: "'Tajawal', Arial, sans-serif" }}
       className="min-h-screen"
     >
-
 
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap');
@@ -177,8 +168,8 @@ export default function MiqashLandingPage() {
       {/* ─── HEADER ─── */}
       <header style={{ backgroundColor: "#3D2F1A", padding: "13px 0" }}>
         <div className="header-inner" style={{ maxWidth: 1100, margin: "0 auto", padding: "0 40px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-          <a href="https://miqash.shop/ar" target="_blank" rel="noopener noreferrer">
-            <img src="https://cdn.salla.sa/Wzrln/2tiiGhb6KmkwN31exgPiQjQPz9GWulZ8YUM1lbHg.jpg" alt="مِقَشّة" style={{ height: 38, borderRadius: 5, objectFit: "contain", display: "block" }} />
+          <a href={STORE.url} target="_blank" rel="noopener noreferrer">
+            <img src={STORE.logo} alt="مِقَشّة" style={{ height: 38, borderRadius: 5, objectFit: "contain", display: "block" }} />
           </a>
           <a href={WA_LINK} target="_blank" rel="noopener noreferrer" style={{ color: "#A8894A", fontSize: 14, fontWeight: 600, textDecoration: "none", display: "flex", alignItems: "center", gap: 6 }}>
             <WaIcon size={17} />
@@ -275,7 +266,7 @@ export default function MiqashLandingPage() {
             </div>
 
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-              <a href="https://miqash.shop/ar/QEGbBx" target="_blank" rel="noopener noreferrer" className="btn-dark">
+              <a href={product.url} target="_blank" rel="noopener noreferrer" className="btn-dark">
                 <CartIcon />
                 اطلب الآن
               </a>
@@ -381,7 +372,7 @@ export default function MiqashLandingPage() {
                 ))}
               </div>
               {/* Review text */}
-              <p style={{ fontSize: 14, lineHeight: 1.65, color: "#3D2F1A", flexGrow: 1 }}>"{r.text}"</p>
+              <p style={{ fontSize: 14, lineHeight: 1.65, color: "#3D2F1A", flexGrow: 1 }}>«{r.text}»</p>
               {/* Reviewer info */}
               <div style={{ borderTop: "1px solid #EDE8DF", paddingTop: 12 }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
@@ -430,7 +421,7 @@ export default function MiqashLandingPage() {
           اطلب طقمك الآن وصله لباب بيتك
         </h2>
         <div style={{ display: "flex", flexDirection: "column", gap: 10, maxWidth: 380, margin: "0 auto" }}>
-          <a href="https://miqash.shop/ar/QEGbBx" target="_blank" rel="noopener noreferrer" className="btn-dark">
+          <a href={product.url} target="_blank" rel="noopener noreferrer" className="btn-dark">
             <CartIcon />
             اطلب من المتجر
           </a>
@@ -445,16 +436,16 @@ export default function MiqashLandingPage() {
       <footer style={{ backgroundColor: "#3D2F1A", borderTop: "1px solid #5a4428", padding: "32px 40px" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <div className="footer-row" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 16, marginBottom: 20 }}>
-            <a href="https://miqash.shop/ar" target="_blank" rel="noopener noreferrer">
-              <img src="https://cdn.salla.sa/Wzrln/2tiiGhb6KmkwN31exgPiQjQPz9GWulZ8YUM1lbHg.jpg" alt="مِقَشّة" style={{ height: 30, borderRadius: 4, objectFit: "contain", display: "block" }} />
+            <a href={STORE.url} target="_blank" rel="noopener noreferrer">
+              <img src={STORE.logo} alt="مِقَشّة" style={{ height: 30, borderRadius: 4, objectFit: "contain", display: "block" }} />
             </a>
             <div style={{ display: "flex", flexWrap: "wrap", gap: 20 }}>
               {[
-                { label: "المتجر", href: "https://miqash.shop/ar" },
-                { label: "سياسة الاستبدال والاسترجاع", href: "https://miqash.shop/ar/p/ddgGe" },
-                { label: "إنستغرام", href: "https://instagram.com/miqash.shop" },
-                { label: "X", href: "https://x.com/miqash_shop" },
-                { label: "واتساب", href: "https://wa.me/966554670717" },
+                { label: "المتجر", href: STORE.url },
+                { label: "سياسة الاستبدال والاسترجاع", href: STORE.returnPolicy },
+                { label: "إنستغرام", href: STORE.instagram },
+                { label: "X", href: STORE.x },
+                { label: "واتساب", href: whatsappLink("السلام عليكم") },
               ].map((link) => (
                 <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer"
                   style={{ color: "#C4AA80", fontSize: 13, textDecoration: "none" }}
@@ -470,7 +461,7 @@ export default function MiqashLandingPage() {
           {/* SBC Badge */}
           <div style={{ borderTop: "1px solid #5a4428", paddingTop: 18, display: "flex", alignItems: "center", justifyContent: "center", gap: 10 }}>
             <a
-              href="https://miqash.shop/ar/redirect/pages/1278257063"
+              href={STORE.sbc}
               target="_blank"
               rel="noopener noreferrer"
               style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}

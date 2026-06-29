@@ -1,21 +1,22 @@
 // lib/seo/buildMetadata.ts
 import type { Metadata } from "next";
+import { STORE } from "@/lib/store/constants";
 import type { LandingPageSEO } from "./types";
 
 export function buildMetadata(seo: LandingPageSEO): Metadata {
   const canonicalUrl = `${seo.baseUrl}/${seo.slug}`;
   const ogImage = seo.images[0];
   const locale = seo.locale ?? "ar_SA";
-  const twitterHandle = seo.twitterHandle ?? "@miqash_shop";
-  const fullTitle = `${seo.title} | متجر مِقَشّة`;
+  const twitterHandle = seo.twitterHandle ?? STORE.twitterHandle;
+  const fullTitle = `${seo.title} | متجر ${STORE.name}`;
 
   return {
     title: fullTitle,
     description: seo.description,
     keywords: seo.keywords,
-    authors: [{ name: "مِقَشّة", url: "https://miqash.shop/ar" }],
-    creator: "مِقَشّة",
-    publisher: "مِقَشّة",
+    authors: [{ name: STORE.name, url: STORE.url }],
+    creator: STORE.name,
+    publisher: STORE.name,
 
     metadataBase: new URL(seo.baseUrl),
     alternates: { canonical: canonicalUrl },
@@ -36,7 +37,7 @@ export function buildMetadata(seo: LandingPageSEO): Metadata {
       url: canonicalUrl,
       title: fullTitle,
       description: seo.description,
-      siteName: "مِقَشّة",
+      siteName: STORE.name,
       locale,
       images: seo.images.map((img) => ({
         url: img.url,

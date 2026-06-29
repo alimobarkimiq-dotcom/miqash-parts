@@ -1,32 +1,12 @@
 "use client";
 import { useState } from "react";
 
-const store = {
-  name: "مِقَشّة",
-  logo: "https://cdn.salla.sa/Wzrln/2tiiGhb6KmkwN31exgPiQjQPz9GWulZ8YUM1lbHg.jpg",
-  url: "https://miqash.shop/ar",
-  email: "miqash11@gmail.com",
-  whatsapp: "966554670717",
-  instagram: "https://instagram.com/miqash.shop",
-  x: "https://x.com/miqash_shop",
-};
-
-const product = {
-  name: "فرشة مكنسة باناسونيك أصلي",
-  hook: "ضعف تنظيف المكنسة يبدأ من الفرشة",
-  sub: "وفرنا لك فرشة أصلية ترجع قوة الأداء وتريح بالك",
-  price: "٧٥",
-  badge: "أصلي ١٠٠٪",
-  origin: "ماليزي الصنع",
-  compat: "يتوافق مع جميع موديلات باناسونيك",
-  offer: "توصيل مجاني",
-  url: "https://miqash.shop/ar/dPRVOxo",
-  images: [
-    "https://cdn.salla.sa/Wzrln/dad3c51d-90c0-4c99-9347-c02f68775347-1000x838.88888888889-DKhlGSHz6CFz23XLPxwPHR5QAN3AMdm2DA1Nplc8.jpg",
-    "https://cdn.salla.sa/Wzrln/771a59cf-73a4-4c9d-88f8-66ea6eb7f5ae-1000x563.98104265403-qZYF2FvS4dUFlwsmemYO6KRrT5wDVrjO8C5qgGIa.jpg",
-    "https://cdn.salla.sa/Wzrln/7039598a-d028-48d9-9d4d-f5a3f2244045-1000x1000-Q3qpIGwoNUVFUjDgrcGlNYeR2CqvH2LZcpQkHe2T.jpg",
-  ],
-};
+import { STORE as store } from "@/lib/store/constants";
+import {
+  PANASONIC_BRUSH_PRODUCT as product,
+  PANASONIC_RELATED_PRODUCTS as related,
+  whatsappLink as waLink,
+} from "@/lib/store/products";
 
 const benefits = [
   { title: "شفط أقوى", desc: "تحسّن أداء الشفط على الأرضيات والسجاد فوراً" },
@@ -58,25 +38,6 @@ const faqs = [
     a: "نعم، ضمان الجودة أو الاسترجاع في حال وجود أي مشكلة في القطعة.",
   },
 ];
-
-const related = [
-  {
-    name: "بكج باناسونيك كامل",
-    price: "١٣٠",
-    url: "https://miqash.shop/ar/vXvrZya",
-    image: "https://cdn.salla.sa/Wzrln/a05cda71-1bbb-463e-86f3-d5e269647506-1000x1000-u6BKIdb0HMr9Ui2TiNNqVrXo5w8BIbdU8hdNl17e.png",
-  },
-  {
-    name: "كيس وشبك باناسونيك",
-    price: "٧٠",
-    url: "https://miqash.shop/ar/KjVVbew",
-    image: "https://cdn.salla.sa/Wzrln/1acbfe44-ccc2-4afd-8bc0-7e0c22f05df1-1000x1000-3Z0TVaZyjtTi5UCd8Y8nZExg2AqTbdjKWMA77WQ3.png",
-  },
-];
-
-function waLink(text: string) {
-  return `https://wa.me/${store.whatsapp}?text=${encodeURIComponent(text)}`;
-}
 
 const WaIcon = ({ size = 18 }: { size?: number }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24"
@@ -128,16 +89,16 @@ export default function Home() {
           {/* معرض الصور */}
           <div className="flex flex-col gap-3">
             <div className="flex aspect-square items-center justify-center rounded-2xl bg-[#f9f5ef] p-10">
-              <img src={product.images[active]} alt={product.name}
+              <img src={product.images[active].url} alt={product.name}
                 className="w-full object-contain transition-opacity duration-200" key={active} />
             </div>
             <div className="flex gap-3">
-              {product.images.map((img, i) => (
+              {product.images.map((image, i) => (
                 <button key={i} onClick={() => setActive(i)}
                   className={`flex h-[88px] w-[88px] flex-1 items-center justify-center rounded-xl border-2 bg-[#f9f5ef] p-2 transition ${
                     active === i ? "border-[#A8894A]" : "border-transparent hover:border-[#ede8df]"
                   }`}>
-                  <img src={img} alt={`صورة ${i + 1}`} className="h-full w-full object-contain" />
+                  <img src={image.url} alt={`صورة ${i + 1}`} className="h-full w-full object-contain" />
                 </button>
               ))}
             </div>
@@ -319,7 +280,7 @@ export default function Home() {
               </div>
             </div>
             <div className="flex gap-5 text-[13px] font-semibold text-[#888]">
-              <a href="https://miqash.shop/ar/brands/229855681" className="hover:text-[#A8894A] transition">باناسونيك</a>
+              <a href={`${store.url}/brands/229855681`} className="hover:text-[#A8894A] transition">باناسونيك</a>
               <a href={store.instagram} className="hover:text-[#A8894A] transition">إنستغرام</a>
               <a href={store.x} className="hover:text-[#A8894A] transition">X</a>
               <a href={waLink("السلام عليكم")} className="hover:text-[#A8894A] transition">واتساب</a>
@@ -329,10 +290,10 @@ export default function Home() {
           {/* الصف الثاني: روابط قانونية + توثيق */}
           <div className="flex flex-wrap items-center justify-between gap-4 pt-5">
             <div className="flex gap-5 text-[12px] font-semibold text-[#aaa]">
-              <a href="https://miqash.shop/ar/p/ddgGe" className="hover:text-[#1a1a1a] transition">سياسة الاستبدال والاسترجاع</a>
+              <a href={store.returnPolicy} className="hover:text-[#1a1a1a] transition">سياسة الاستبدال والاسترجاع</a>
             </div>
             <a
-              href="https://miqash.shop/ar/redirect/pages/1278257063"
+              href={store.sbc}
               className="flex items-center gap-2 text-[12px] font-semibold text-[#aaa] hover:text-[#1a1a1a] transition"
             >
               <img src="https://cdn.salla.network/images/sbc.png?v=2.0.5" alt="المركز السعودي للأعمال" className="h-6 w-6 object-contain" />
