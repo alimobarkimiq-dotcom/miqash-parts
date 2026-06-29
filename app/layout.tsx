@@ -9,34 +9,17 @@ const tajawal = Tajawal({
 });
 
 export const metadata: Metadata = {
-  title: "فرشة مكنسة باناسونيك أصلية | مقشة",
+  title: "قطع غيار المكانس | متجر مِقَشّة",
   description:
-    "فرشة أصلية لمكانس باناسونيك تساعد على تحسين تنظيف الأرضيات والسجاد. توصيل مجاني لجميع مناطق المملكة.",
+    "صفحات منتجات مِقَشّة لقطع غيار المكانس الأصلية والمتوافقة مع التوصيل داخل المملكة.",
   openGraph: {
-    title: "فرشة مكنسة باناسونيك أصلية | مقشة",
+    title: "قطع غيار المكانس | متجر مِقَشّة",
     description:
-      "وفرنا لك فرشة أصلية ترجع قوة الأداء وتريح بالك. توصيل مجاني لجميع مناطق المملكة.",
-    url: "https://miqash.shop/ar/dPRVOxo",
-    siteName: "مقشة",
-    images: [
-      {
-        url: "https://cdn.salla.sa/Wzrln/dad3c51d-90c0-4c99-9347-c02f68775347-1000x838.88888888889-DKhlGSHz6CFz23XLPxwPHR5QAN3AMdm2DA1Nplc8.jpg",
-        width: 1000,
-        height: 839,
-        alt: "فرشة مكنسة باناسونيك أصلية",
-      },
-    ],
+      "اختر قطعة الغيار المناسبة لمكنستك وتأكد من التوافق قبل الطلب.",
+    url: "https://parts.miqash.shop",
+    siteName: "مِقَشّة",
     locale: "ar_SA",
     type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "فرشة مكنسة باناسونيك أصلية | مقشة",
-    description:
-      "وفرنا لك فرشة أصلية ترجع قوة الأداء وتريح بالك. توصيل مجاني لجميع مناطق المملكة.",
-    images: [
-      "https://cdn.salla.sa/Wzrln/dad3c51d-90c0-4c99-9347-c02f68775347-1000x838.88888888889-DKhlGSHz6CFz23XLPxwPHR5QAN3AMdm2DA1Nplc8.jpg",
-    ],
   },
 };
 

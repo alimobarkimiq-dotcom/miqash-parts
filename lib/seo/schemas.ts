@@ -1,25 +1,22 @@
 // lib/seo/schemas.ts
+import { STORE } from "@/lib/store/constants";
 import type { LandingPageSEO } from "./types";
 
-// ─── ثابت — بيانات المتجر لا تتغير بين الصفحات ───
 const ORG_SCHEMA = {
   "@type": "Organization" as const,
-  name: "مِقَشّة",
-  url: "https://miqash.shop/ar",
+  name: STORE.name,
+  url: STORE.url,
   logo: {
     "@type": "ImageObject" as const,
-    url: "https://cdn.salla.sa/Wzrln/2tiiGhb6KmkwN31exgPiQjQPz9GWulZ8YUM1lbHg.jpg",
+    url: STORE.logo,
   },
   contactPoint: {
     "@type": "ContactPoint" as const,
     contactType: "customer service",
     availableLanguage: "Arabic",
-    telephone: "+966554670717",
+    telephone: `+${STORE.whatsapp}`,
   },
-  sameAs: [
-    "https://instagram.com/miqash.shop",
-    "https://x.com/miqash_shop",
-  ],
+  sameAs: [STORE.instagram, STORE.x],
 };
 
 function productSchema(seo: LandingPageSEO): object {
@@ -43,7 +40,8 @@ function productSchema(seo: LandingPageSEO): object {
       ...(seo.merchantReturnPolicy && {
         hasMerchantReturnPolicy: {
           "@type": "MerchantReturnPolicy",
-          returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
+          returnPolicyCategory:
+            "https://schema.org/MerchantReturnFiniteReturnWindow",
           applicableCountry: "SA",
           returnPolicyUrl: seo.merchantReturnPolicy,
         },
@@ -51,7 +49,6 @@ function productSchema(seo: LandingPageSEO): object {
     },
   };
 
-  // aggregateRating — فقط إذا موجودة في البيانات
   if (seo.aggregateRating) {
     schema.aggregateRating = {
       "@type": "AggregateRating",
@@ -62,7 +59,6 @@ function productSchema(seo: LandingPageSEO): object {
     };
   }
 
-  // reviews — فقط إذا موجودة
   if (seo.reviews && seo.reviews.length > 0) {
     schema.review = seo.reviews.map((r) => ({
       "@type": "Review",
@@ -113,15 +109,14 @@ function webSiteSchema(): object {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "مِقَشّة",
-    url: "https://miqash.shop/ar",
+    name: STORE.name,
+    url: STORE.url,
     inLanguage: "ar",
     potentialAction: {
       "@type": "SearchAction",
       target: {
         "@type": "EntryPoint",
-        // يشير لمحرك البحث في متجر مقشة الرئيسي
-        urlTemplate: "https://miqash.shop/ar/search?q={search_term_string}",
+        urlTemplate: STORE.searchUrl,
       },
       "query-input": "required name=search_term_string",
     },
