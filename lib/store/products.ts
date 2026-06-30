@@ -1,4 +1,4 @@
-import { STORE } from "./constants";
+﻿import { STORE } from "./constants";
 
 export function whatsappLink(text: string) {
   return `https://wa.me/${STORE.whatsapp}?text=${encodeURIComponent(text)}`;
@@ -103,3 +103,60 @@ export const HITACHI_HOSE_KIT_PRODUCT = {
     "SS220 BG",
   ],
 } as const;
+export const PANASONIC_FULL_KIT_PRODUCT = {
+  slug: "panasonic-full-kit",
+  brand: "Panasonic",
+  name: "بكج لي مكنسة باناسونيك (طقم لي كامل)+(كيس+شبك)+(أداة تنظيف الشبابيك)",
+  marketingTitle: "بكج باناسونيك الكامل",
+  hook: "بكج باناسونيك الكامل",
+  sub: "وكل ما تحتاجه لإعادة قوة مكنستك في طلب واحد",
+  price: "١٣٠",
+  numericPrice: "130",
+  badge: "طقم كامل",
+  origin: "مختار لمكانس باناسونيك",
+  compat: "متوافق مع موديلات باناسونيك المحددة",
+  offer: "طلب واحد بدل البحث عن كل قطعة",
+  url: "https://miqash.shop/ar/vXvrZya",
+  includes: [
+    "لي مكنسة باناسونيك",
+    "فرشة شفط",
+    "زوج عصا",
+    "كيس فلتر",
+    "شبك",
+    "أداة تنظيف الشبابيك",
+  ],
+  compatibleModels: [
+    "MC-YL690",
+    "MC-YL620",
+    "MC-YL699",
+    "MC-YL697K",
+    "MC-YL627",
+    "MC-YL693",
+    "MC-YL625",
+    "MC-YL628",
+    "MC-YL691K",
+    "MC-YL691",
+    "MC-YL621",
+  ],
+  images: [
+    {
+      url: "https://cdn.salla.sa/Wzrln/a05cda71-1bbb-463e-86f3-d5e269647506-1000x1000-u6BKIdb0HMr9Ui2TiNNqVrXo5w8BIbdU8hdNl17e.png",
+      width: 1000,
+      height: 1000,
+      alt: "بكج باناسونيك الكامل",
+    },
+    {
+      url: "https://cdn.salla.sa/Wzrln/a2641348-6504-4e5c-9d7f-cccd8c3620e8-1000x1000-TGkSZo7FkH2tPc3i2tnl2FYgsLPWcDv20dqEz24q.jpg",
+      width: 1000,
+      height: 1000,
+      alt: "محتويات بكج لي مكنسة باناسونيك كامل",
+    },
+    {
+      url: "https://cdn.salla.sa/Wzrln/fc0f73dc-39ff-421c-a486-31acd1f414ed-1000x883.13609467456-mOxEKUyL5HeD4GhOzhhiuO3OsNm7MNJFdohb6v9i.png",
+      width: 1000,
+      height: 883,
+      alt: "قطع بكج باناسونيك الكامل",
+    },
+  ],
+} as const;
+
